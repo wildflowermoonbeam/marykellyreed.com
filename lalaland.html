@@ -9,7 +9,24 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play lalaland.</tw-noscript></noscript></tw-story>
-<tw-storydata name="lalaland" startnode="1" creator="Twine" creator-version="2.6.2" format="Harlowe" format-version="3.3.5" ifid="26CB59A6-A312-4955-AE66-A71A54211162" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="" position="500,225" size="100,100">travel to [[pinterest board]]
+<tw-storydata name="lalaland" startnode="1" creator="Twine" creator-version="2.6.2" format="Harlowe" format-version="3.3.5" ifid="26CB59A6-A312-4955-AE66-A71A54211162" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">/* method for extracting a named variable from the URL query used. */
+function getQueryVariable(variable) {
+	var query = window.location.search.substring(1);
+	var vars = query.split("&amp;");
+	for (var i=0;i<vars.length;i++) {
+		var pair = vars[i].split("=");
+		if(pair[0] == variable){
+			return pair[1];
+		}
+	}
+	return(false);
+}
+
+/* if URL query contained a goto=x then show that passage on startup. */
+var goto = getQueryVariable("goto");
+if (goto) {
+	Story.startPassage = goto;
+}</script><tw-passagedata pid="1" name="intro" tags="" position="500,225" size="100,100">travel to [[pinterest board]]
 
 travel to [[outfit]]
 
