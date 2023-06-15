@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>w h i s p e r l a n d</title>
+  
+<style>
+
+* {box-sizing: border-box;}
+
+body {background-color:#f0d1de; background:url('pinkhearts-whimsical.gif'); margin: 0;}
+
+h1 {font-family: Upright, monospace; text-align:center; font-size: 6rem; color: #fff;
+  letter-spacing: -2px; font-weight: 900; font-stretch: ultra-expanded; -webkit-text-stroke: 0.25px #000; line-height: 0.25;}
+
+  @font-face {font-family: Upright; src: url(Upright.otf);}
+
+h2 {font-family: 'Lucida Console', monospace; text-align:center; font-size: 2rem; color:#fff;
+  letter-spacing: 10px; font-style: italic; line-height: 0.5;}
+
+ul {list-style-type: "♡ ";}
+
+.column {float: left; padding: 10px;}
+
+    .column.sidebar {width: 40%;}
+
+    .column.gameplay {width: 60%;}
+
+    .row::after {content: ""; display: table; clear: both;}
+
+.welcome {background-color: #dbcfd6;
+  margin: 30px 30px auto; 
+  padding: 20px 70px 20px; border: 10px solid #ac98b4;
+  font-family: 'Lucida Console', monospace; font-size: 1rem; color:#ac98b4;}
+
+.start {background-color: #dfbec0;
+  width: 50%;
+  margin: 20px auto; 
+  padding: 20px 20px 20px; border: 7px solid #e29fb6;
+  font-family: 'Lucida Console', monospace; font-size: 1rem; color:#e29fb6; text-align:center;}
+
+a {color:#e29fb6; font-weight: bold; text-decoration: none;}
+
+a:hover {color:#f2f3f2;}
+
+a.blink {color:#e29fb6; font-size: 1.5rem; animation: blinker 1.5s linear infinite; text-decoration: none;}
+
+a.blink:hover {color:#f2f3f2;}
+
+@keyframes blinker {
+  50% {opacity: 0;}
+}
+
+.credits {background-color: #f3e6e4;
+  margin: 30px 30px auto;
+  padding: 20px 70px 30px; border: 7px solid #ea92aa;
+  font-family: 'Lucida Console', monospace; font-size: 1rem; color:#e29fb6;}
+
+  .credits a:hover {color:#ac98b4;}
+
+  .pinboard {width: 100%; padding: 20px; display: flex; justify-content: center;}
+
+.game-container {margin: 30px auto; border: 13px solid #e29fb6;
+  display: flex; width:90%; height: 85vh; flex-direction: column; overflow: hidden;}
+
+  .screen {flex-grow: 1; border: none; margin: 0; padding: 0;}
+
+.contact {background-color: #f3e6e4;
+  width: 45%;
+  margin: 30px auto;
+  padding: 10px 10px 10px; border: 5px solid #ea92aa;
+  font-family: 'Lucida Console', monospace; font-size: 0.75rem; color:#e29fb6; text-align:center;}
+
+  .contact a:hover {color:#ac98b4;}
+
+</style>
+
+<script>
+
+function gameplay() {document.getElementById("change").innerHTML = "The game is currently running. Click the restart button in the upper right corner of the game window to start a new game from the beginning.";}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="row">
+  
+<div class="column sidebar">
+
+  <div class="welcome">
+    <h1>whisperland</h1>
+    <p><i>whisperland</i> is a pinterest-inspired role playing game. gameplay takes about 10-15 minutes.</p>
+    <p>system requirements:</p>
+        <ul>
+        <li>for the best experience, please navigate to whisperland on a desktop/laptop computer</li>
+        <li>enable javascript</li>
+        <li>expand your web browser to full screen</li>
+        </ul>
+    <p>press the button below to get started.</p>
+  </div>
+
+  <div class="start">
+    <span id="change"><a target="game" class="blink" href="whisperland.html" onclick="gameplay()">&#9654; start &#9664;</a></span>
+  </div>
+
+  <div class="credits">
+  note: the game will occasionally ask you to provide text input. any information you submit is used only in-game; it is not saved or submitted anywhere.
+
+<div class="pinboard">
+<a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/marykellyreed/w-h-i-s-p-e-r-l-a-n-d/"></a>
+</div>
+
+    <p><center>*credits*</center></p>
+    <ul>
+        <li>repeating hearts background from <a href="http://whimsical.heartette.net/" target="_blank">whimsical</a></li>
+        <li>whisperland is coded using <a href="https://twinery.org/" target="_blank">twine</a> (harlowe 3.3.5) and <a href="https://code.visualstudio.com/" target="_blank">visual studio code</a></li>
+        <li>i do not own pinterest. all pins featured in the game can be found on the board linked above.</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="column gameplay">
+
+  <div class="game-container">
+    <iframe name="game" class="screen" src="static.html"></iframe>
+  </div>
+
+  <div class="contact">
+    send bug reports + love notes to <a href="mailto:marykellyreed@gmail.com?subject=whisperland">marykellyreed@gmail.com</a>
+  </div>
+
+</div>
+
+</div>
+
+
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+</body>
+
+</html>
