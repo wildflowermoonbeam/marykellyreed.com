@@ -567,9 +567,11 @@ you might want to try one of these methods - although i&#39;m not sure if any of
 ]
 (click: ?potion)[(replace: ?options)(display:&quot;potion result&quot;)]
 
-</tw-passagedata><tw-passagedata pid="61" name="potion result" tags="" position="1525,2125" size="100,100">{(if: $pokeberries is true)[(set: $potion to &quot;poison&quot;)it&#39;s a dark, muddy color.]
+</tw-passagedata><tw-passagedata pid="61" name="potion result" tags="" position="1525,2125" size="100,100">steam billows out of the cauldron. when it clears, you peer inside cautiously...
 
-(else-if: $love is &gt;= 3)[(set: $potion to &quot;love&quot;)it&#39;s a pale pink color with a pearl-like sheen.]
+(click: &quot;peer inside&quot;)[{(if: $pokeberries is true)[(set: $potion to &quot;poison&quot;)it&#39;s a dark, muddy color.]
+
+(else-if: $love is &gt;= 4)[(set: $potion to &quot;love&quot;)it&#39;s a pale pink color with a pearl-like sheen.]
 
 (else-if: $dream is &gt;= 2)[(set: $potion to &quot;dream&quot;)it&#39;s a pale blue color. it seems quite thick.]
 
@@ -587,7 +589,8 @@ no thanks
 (if: $potion is &quot;nothing&quot;)[(go-to: &quot;nothing&quot;)]
 ]
 
-(click: &quot;no thanks&quot;)[(go-to: &quot;level 6&quot;)]</tw-passagedata><tw-passagedata pid="62" name="poison" tags="" position="1650,2050" size="100,100">&lt;h2&gt;game over&lt;/h2&gt;
+(click: &quot;no thanks&quot;)[(go-to: &quot;level 6&quot;)]
+]</tw-passagedata><tw-passagedata pid="62" name="poison" tags="" position="1650,2050" size="100,100">&lt;h2&gt;game over&lt;/h2&gt;
 that was poison! luckily, there&#39;s an antidote, but you&#39;re probably going to be in bed for a week... at least you can get caught up on some tv.
 
 &lt;span class=&quot;link1&quot;&gt;&lt;span id=&quot;arrow1&quot;&gt;&amp;#9654;&lt;/span&gt; start a new game (click:&quot;start a new game&quot;)[(restart:)]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="63" name="irresistible" tags="" position="1400,2250" size="100,100">(set: $lovespell to true)
