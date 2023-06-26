@@ -37,20 +37,20 @@ a {color:#e29fb6; font-weight: bold; text-decoration: none;}
 
 .container {padding-bottom: 30px; display: flex; flex-wrap: wrap; flex-direction: column; max-height: 1500px; box-sizing: border-box;}
 
-.flex-child {width: 40%; box-sizing: border-box;}
+.flex-child-welcome {width: 40%; box-sizing: border-box; justify-content: center;}
 
 .welcome {width: 100%;  
   background-color: #dbcfd6;
-  margin: 30px 30px auto; 
-  padding: 20px 70px 20px; border: 10px solid #ac98b4;
+  margin: 30px; 
+  padding: 20px 70px; border: 10px solid #ac98b4;
   font-family: 'Lucida Console', monospace; font-size: 1rem; color:#ac98b4;}
 
 .start {width: 50%; background-color: #dfbec0;
-  margin: 40px auto; 
+  margin: 30px auto; 
   padding: 20px; border: 7px solid #e29fb6;
   font-family: 'Lucida Console', monospace; font-size: 1rem; color:#e29fb6; text-align:center;}
 
-.flex-child-credits {width: 40%; box-sizing: border-box;}
+.flex-child-credits {width: 40%;}
 
 .credits {width: 100%; background-color: #f3e6e4;
   margin: 10px 30px auto;
@@ -61,7 +61,7 @@ a {color:#e29fb6; font-weight: bold; text-decoration: none;}
 
 .flex-break {flex-basis: 100%; width: 0;}
 
-.flex-child-game {width: 55%; box-sizing: border-box;}
+.flex-child-game {width: 55%;}
 
 .game-container {width: 90%; box-sizing: border-box; margin: 30px auto; border: 13px solid #e29fb6;
     display: flex; height: 85vh; overflow: hidden;}
@@ -71,17 +71,31 @@ a {color:#e29fb6; font-weight: bold; text-decoration: none;}
 .contact {width: 25%; background-color: #dbcfd6;
   margin: 30px auto;
   padding: 10px 10px 10px; border: 5px solid #ac98b4;
-  font-family: 'Lucida Console', monospace; font-size: 0.75rem; color:#ac98b4; text-align:center;}
+  font-family: 'Lucida Console', monospace; font-size: 0.75rem; color:#ac98b4; text-align: center;}
 
-  @media (max-width: 1000px) { .container {max-height: none;}
-                              .flex-child {width: 90%;}
-                              .welcome {padding: 10px 30px 10px;}
-                              h1 {font-size: 4rem;}
+  @media (max-width: 900px) { .container {max-height: 2500px;}
+                              .flex-child-welcome {width: 90%; justify-content: center;}
+                              .welcome {padding: 10px 30px; justify-content: center;}
+                              h1 {font-size: 4rem; -webkit-text-stroke: 1px #000;}
                               .start {width: 65%;}
+                              .flex-child-credits {width: 90%; order: 1; justify-content: center;}
                               .credits {padding: 10px 30px 15px;}
+                              .pinboard {padding: 10px;}
                               .flex-break {display: none;}
                               .flex-child-game {width: 100%;}
-                              .flex-child-credits {width: 90%; order: 1;}
+                              .contact {width: 60%; order: 2;}}
+
+  @media (max-width: 600px) { .container {max-height: none;}
+                              .flex-child-welcome {width: 90%; justify-content: center;}
+                              .welcome {padding: 10px 30px;}
+                              h1 {font-size: 4rem; -webkit-text-stroke: 1px #000;}
+                              .start {width: 65%; margin: 30px auto 10px; justify-content: center;}
+                              .flex-child-credits {width: 90%; order: 1; justify-content: center;}
+                              .credits {margin: 10px 30px 15px;}
+                              .pinboard {padding: 10px;}
+                              .flex-break {display: none;}
+                              .flex-child-game {width: 100%;}
+                              .game-container {padding: 20px auto;}
                               .contact {width: 60%; order: 2;}}
 
 </style>
@@ -99,7 +113,7 @@ function gameplay() {document.getElementById("change").innerHTML = "The game is 
 <div class="container">
 
 
-  <div class="flex-child">
+  <div class="flex-child-welcome">
   <div class="welcome">
     <h1>whisperland</h1>
     <p><i>whisperland</i> is a pinterest role playing game. gameplay takes about 10-15 minutes.</p>
@@ -115,7 +129,7 @@ function gameplay() {document.getElementById("change").innerHTML = "The game is 
   <div class="start">
     <span id="change"><a target="game" class="blink" href="whisperland.html" onclick="gameplay()">&#9654; start &#9664;</a></span>
   </div>
-  </div> <!-- end welcome flex-child -->
+  </div> <!-- end flex-child-welcome -->
 
   <div class="flex-child-credits">
   <div class="credits">
