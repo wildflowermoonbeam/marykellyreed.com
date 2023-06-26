@@ -37,23 +37,23 @@ a {color:#e29fb6; font-weight: bold; text-decoration: none;}
 
 .container {padding-bottom: 30px; display: flex; flex-wrap: wrap; flex-direction: column; max-height: 1500px; box-sizing: border-box;}
 
-.flex-child-welcome {width: 40%; box-sizing: border-box; justify-content: center;}
+.flex-child-welcome {width: 40%; margin: 30px 30px 0px; justify-content: center;}
 
-.welcome {width: 100%;  
+.welcome {width: 100%;
   background-color: #dbcfd6;
-  margin: 30px; 
+  margin: 0px; 
   padding: 20px 70px; border: 10px solid #ac98b4;
   font-family: 'Lucida Console', monospace; font-size: 1rem; color:#ac98b4;}
 
 .start {width: 50%; background-color: #dfbec0;
-  margin: 30px auto; 
+  margin: 30px auto 0px; 
   padding: 20px; border: 7px solid #e29fb6;
   font-family: 'Lucida Console', monospace; font-size: 1rem; color:#e29fb6; text-align:center;}
 
-.flex-child-credits {width: 40%;}
+.flex-child-credits {width: 40%; margin: 30px 30px 20px; justify-content: center;}
 
 .credits {width: 100%; background-color: #f3e6e4;
-  margin: 10px 30px auto;
+  margin: 0px;
   padding: 20px 70px 30px; border: 7px solid #ea92aa;
   font-family: 'Lucida Console', monospace; font-size: 1rem; color:#e29fb6;}
 
@@ -61,9 +61,9 @@ a {color:#e29fb6; font-weight: bold; text-decoration: none;}
 
 .flex-break {flex-basis: 100%; width: 0;}
 
-.flex-child-game {width: 55%;}
+.flex-child-game {width: 55%; margin: 30px 30px 0px 0px; padding: 0px;}
 
-.game-container {width: 90%; box-sizing: border-box; margin: 30px auto; border: 13px solid #e29fb6;
+.game-container {width: 100%; box-sizing: border-box; margin: 0px; border: 13px solid #e29fb6;
     display: flex; height: 85vh; overflow: hidden;}
 
   .screen {flex-grow: 1; border: none; margin: 0; padding: 0;}
@@ -73,28 +73,28 @@ a {color:#e29fb6; font-weight: bold; text-decoration: none;}
   padding: 10px 10px 10px; border: 5px solid #ac98b4;
   font-family: 'Lucida Console', monospace; font-size: 0.75rem; color:#ac98b4; text-align: center;}
 
-  @media (max-width: 900px) { .container {max-height: 2500px;}
+  @media (max-width: 900px) { .container {padding-bottom: 10px; max-height: 2500px;}
                               .flex-child-welcome {width: 90%; justify-content: center;}
                               .welcome {padding: 10px 30px; justify-content: center;}
                               h1 {font-size: 4rem; -webkit-text-stroke: 1px #000;}
                               .start {width: 65%;}
-                              .flex-child-credits {width: 90%; order: 1; justify-content: center;}
-                              .credits {padding: 10px 30px 15px;}
+                              .flex-child-credits {width: 90%; margin: 30px 30px 0px 30px; order: 1; justify-content: center;}
+                              .credits {padding: 20px 30px 15px;}
                               .pinboard {padding: 10px;}
                               .flex-break {display: none;}
-                              .flex-child-game {width: 100%;}
+                              .flex-child-game {width: 90%; margin: 30px 30px 0px 30px; justify-content: center;}
                               .contact {width: 60%; order: 2;}}
 
-  @media (max-width: 600px) { .container {max-height: none;}
+  @media (max-width: 600px) { .container {padding-bottom: 10px; max-height: none;}
                               .flex-child-welcome {width: 90%; justify-content: center;}
                               .welcome {padding: 10px 30px;}
-                              h1 {font-size: 4rem; -webkit-text-stroke: 1px #000;}
-                              .start {width: 65%; margin: 30px auto 10px; justify-content: center;}
-                              .flex-child-credits {width: 90%; order: 1; justify-content: center;}
-                              .credits {margin: 10px 30px 15px;}
+                              h1 {font-size: 4rem; letter-spacing: 0px; -webkit-text-stroke: 3px #000;}
+                              .start {width: 65%;}
+                              .flex-child-credits {width: 90%; margin: 30px 30px 0px 30px;  order: 1; justify-content: center;}
+                              .credits {padding: 20px 30px 15px;}
                               .pinboard {padding: 10px;}
                               .flex-break {display: none;}
-                              .flex-child-game {width: 100%;}
+                              .flex-child-game {width: 90%; margin: 30px 30px 0px 30px; justify-content: center;}
                               .game-container {padding: 20px auto;}
                               .contact {width: 60%; order: 2;}}
 
