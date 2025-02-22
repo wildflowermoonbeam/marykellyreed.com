@@ -65,5 +65,5 @@ a:hover {color:#666; text-decoration: none;}
 @media (max-width: 1250px) { .avision, .headerbox, .snackbasket, .project, .btmnav {width: 45%;}
 }
 
-@media (max-width: 800px) { .avision, .headerbox, .snackbasket, .project, .btmnav {width: 65%;}
+@media (max-width: 800px) { .avision, .headerbox, .snackbasket, .project, .btmnav {width: 85%;}
 }
