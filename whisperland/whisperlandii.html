@@ -9,7 +9,8 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play whisperland ii.</tw-noscript></noscript></tw-story>
-<tw-storydata name="whisperland ii" startnode="5" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="A60E78E9-AF90-4178-A386-B2DADE2980DD" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="begin" tags="" position="500,325" size="100,100">It&#39;s lovely to meet you, $name.
+<tw-storydata name="whisperland ii" startnode="5" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="A60E78E9-AF90-4178-A386-B2DADE2980DD" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* make outfit pics lil */
+.snug {width: 200px; height: 200px; object-fit: cover;}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="begin" tags="" position="500,325" size="100,100">It&#39;s lovely to meet you, $name.
 
 Our story begins in (link-reveal: &quot;Paris.&quot;)[
 
@@ -42,10 +43,10 @@ Checked baggage is for amateurs. We&#39;re going to be traveling carry-on only. 
 (if: $sewingkit)[(set: _suitcase to it +1)]
 (if: $key)[(set: _suitcase to it +1)]
 (if: $tail)[(set: _suitcase to it +1)]
-(if: $camera)[(set: _suitcase to it +1)]}(if: _suitcase is &lt; 11)[(goto:&#39;fly&#39;)](else: )[&lt;i&gt;your carry-on won&#39;t zip with that many items. try taking some out.&lt;/i&gt;]
+(if: $camera)[(set: _suitcase to it +1)]}(if: _suitcase is &lt; 1)[&lt;i&gt;you have to pack something.&lt;/i&gt;](else-if: _suitcase is &lt; 11)[(goto:&#39;great job&#39;)](else-if: _suitcase is &gt; 10)[&lt;i&gt;your carry-on won&#39;t zip with that many items. try taking some out.&lt;/i&gt;]
 ]]
 ]
-]</tw-passagedata><tw-passagedata pid="3" name="fly" tags="" position="625,450" size="100,100">You did a great job packing. Probably.(click: &quot;Probably.&quot;)[
+]</tw-passagedata><tw-passagedata pid="3" name="OLD - job assignment" tags="" position="1025,450" size="100,100">You did a great job packing. Probably.(click: &quot;Probably.&quot;)[
 
 Don&#39;t worry! If you forgot anything, we can buy it there. You have been saving up a lot of money from your side gig ...
 
@@ -57,7 +58,7 @@ wait, (link-reveal: &quot;what is it that you&#39;ve been doing again?&quot;)[
 
 (link-reveal-goto: &quot;Working at Starbucks&quot;, &quot;budget&quot;)[(set:$gig to &quot;barista&quot;)(set:$purse to it +500)]
 ]
-]</tw-passagedata><tw-passagedata pid="4" name="budget" tags="" position="750,450" size="100,100">Ahhh that&#39;s right, (if: $gig is &#39;seller&#39;)[you&#39;ve become notorious for your love potions!](else-if: $gig is &#39;dancer&#39;)[that sounds like fun!](else-if: $gig is &#39;barista&#39;)[you really deserve a break!]
+]</tw-passagedata><tw-passagedata pid="4" name="OLD - budget" tags="" position="1150,450" size="100,100">Ahhh that&#39;s right, (if: $gig is &#39;seller&#39;)[you&#39;ve become notorious for your love potions!](else-if: $gig is &#39;dancer&#39;)[that sounds like fun!](else-if: $gig is &#39;barista&#39;)[you really deserve a break!]
 
 Well, combined with the money we saved on baggage fees you have $(print:$purse) to start off. Of course we&#39;ll have to convert that into Euros. (click: &quot;convert that into Euros.&quot;)[
 
@@ -73,7 +74,153 @@ Okay, (link-goto: &quot;let&#39;s board that plane.&quot;, &quot;level 1&quot;)
 
 (click-rerun: &quot;continue&quot;)[
 (if: $name is not &quot;&quot;)[(goto:&#39;begin&#39;)](else: )[&lt;i&gt;please enter your name&lt;/i&gt;]
-]]</tw-passagedata><tw-passagedata pid="6" name="level 1" tags="" position="500,600" size="100,100"></tw-passagedata></tw-storydata>
+]]</tw-passagedata><tw-passagedata pid="6" name="level 2" tags="" position="500,700" size="100,100">(set: $recs to (ds: &#39;basic&#39;))(link-goto: &quot;level 2:
+ who can you trust?&quot;, &quot;recs&quot;)</tw-passagedata><tw-passagedata pid="7" name="recs" tags="" position="625,700" size="100,100">While you&#39;re on the plane, you have plenty of time to go through all those email newsletters you&#39;ve been saving and decide which recommendations we should check out first.(click: &quot;which recommendations&quot;)[
+
+Which of these do you want to look at first?
+(display: &quot;stacks&quot;)
+]</tw-passagedata><tw-passagedata pid="8" name="witty flaneuse dialogue" tags="" position="825,825" size="100,100">(set: $recs to it + (ds: &#39;flaneuse&#39;))
+
+walking around
+
+Or (link-goto: &quot;go back and check out the other recs&quot;, &quot;newsletters&quot;)
+
+[[I&#39;m finished reading for now.]]</tw-passagedata><tw-passagedata pid="9" name="exquisite lingerie assumptions" tags="" position="975,825" size="100,100">(set: $recs to it + (ds: &#39;slutty&#39;))
+
+get dressed
+
+Or (link-goto: &quot;go back and check out the other recs&quot;, &quot;newsletters&quot;)
+
+[[I&#39;m finished reading for now.]]</tw-passagedata><tw-passagedata pid="10" name="heavy yet discreet meals" tags="" position="675,825" size="100,100">(set: $recs to it + (ds: &#39;heavy&#39;))
+
+meals
+
+Upgrade your subscription to paid to continue reading this post ($5)(click-replace: &quot;Upgrade your subscription to paid to continue reading this post ($5)&quot;)[(set: $purse to it - 5)(set: $recs to it + (ds: &#39;xtraheavy&#39;))Here&#39;s the rest of the post]
+
+Or (link-goto: &quot;go back and check out the other recs&quot;, &quot;newsletters&quot;)
+
+[[I&#39;m finished reading for now.]]</tw-passagedata><tw-passagedata pid="11" name="newsletters" tags="" position="750,700" size="100,100">[[witty flaneuse dialogue]]
+
+[[exquisite lingerie assumptions]]
+
+[[heavy yet discreet meals]]</tw-passagedata><tw-passagedata pid="12" name="I&#39;m finished reading for now." tags="" position="750,950" size="100,100"></tw-passagedata><tw-passagedata pid="13" name="great job" tags="" position="625,450" size="100,100">You did a great job packing. Probably.(click: &quot;Probably.&quot;)[
+
+Don&#39;t worry! If you forgot anything, we can buy it there. You have been saving up a lot of money at ...
+
+wait, (link-goto: &quot;what is it that you&#39;ve been doing again?&quot;, &quot;level 1&quot;)
+]</tw-passagedata><tw-passagedata pid="14" name="level 1" tags="" position="500,575" size="100,100">(link-goto: &quot;level 1:
+dress for the job you want&quot;, &quot;t-shirt&quot;)</tw-passagedata><tw-passagedata pid="15" name="t-shirt" tags="" position="625,575" size="100,100">(set:$mermaid to &quot;false&quot;)Your outfit begins with a simple white t-shirt.
+
+(link-reveal-goto: &#39;&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/tshirt-tight.jpg&quot; class=&quot;snug&quot;&gt;&#39;, &quot;bottom&quot;)[(set:$top to &quot;tight&quot;)(set:$personality to 1)] (link-reveal-goto: &#39;&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/tshirt-loose.jpg&quot; class=&quot;snug&quot;&gt;&#39;, &quot;bottom&quot;)[(set:$top to &quot;loose&quot;)(set:$personality to 3)] </tw-passagedata><tw-passagedata pid="16" name="results" tags="" position="1000,575" size="100,100">(if: $mermaid is &quot;true&quot;)[(set:$creature to &quot;mermaid&quot;)]You&#39;re a &#39;&#39;(if: $creature is &quot;fairy princess&quot;)[fairy princess] (if: $creature is &quot;vampire&quot;)[vampire] (if: $creature is &quot;mermaid&quot;)[mermaid](if: $creature is &quot;witch&quot;)[witch] (if: $creature is &quot;goblin&quot;)[goblin]&#39;&#39; (if: $personality is 1)[(set: $gig to &quot;vintage vendor&quot;)(set: $purse to it + 100)vintage clothing seller] (if: $personality is 2)[(set: $gig to &quot;admin&quot;)(set: $purse to it + 150)administrative assistant] (if: $personality is 3)[(set: $gig to &quot;poet&quot;)(set: $purse to it - 5)poet] (if: $personality is 4)[(set: $gig to &quot;copywriter&quot;)(set: $purse to it + 100)copywriter] (if: $personality is 5)[(set: $gig to &quot;palm reader&quot;)(set: $purse to it + 50)palm reader] (if: $personality is 6)[(set: $gig to &quot;barista&quot;)(set: $purse to it + 250)barista] (if: $personality is 8)[(set: $gig to &quot;dj&quot;)(set: $purse to it + 65)DJ] (either:&quot;with great hair&quot;,&quot;listening to your favorite song on your headphones&quot;,&quot;pretending your life is a 90s rom com&quot;,&quot;suffering from a broken heart&quot;)
+
+(if: $top is &quot;tight&quot;)[&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/tshirt-tight.jpg&quot; class=&quot;snug&quot;&gt;](else-if: $top is &quot;loose&quot;)[&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/tshirt-loose.jpg&quot; class=&quot;snug&quot;&gt;] (if: $bottom is &quot;jeans&quot;)[&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/jeans.png&quot; class=&quot;snug&quot;&gt;](else-if: $bottom is &quot;pink&quot;)[&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/pink-skirt.png&quot; class=&quot;snug&quot;&gt;](else-if: $bottom is &quot;plaid&quot;)[&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/plaid-skirt.png&quot; class=&quot;snug&quot;&gt;](else-if: $bottom is &quot;sequins&quot;)[&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/sequin-skirt.jpg&quot; class=&quot;snug&quot;&gt;] (if: $shoes is &quot;boots&quot;)[&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/boots.jpg&quot; class=&quot;snug&quot;&gt;](else-if: $shoes is &quot;converse&quot;)[&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/converse.jpg&quot; class=&quot;snug&quot;&gt;](else-if: $shoes is &quot;glitter&quot;)[&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/glitter-heels.jpg&quot; class=&quot;snug&quot;&gt;](else-if: $shoes is &quot;rose&quot;)[&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/rose-heels.png&quot; class=&quot;snug&quot;&gt;]
+
+Ahhh that&#39;s right, (if: $gig is &#39;vintage vendor&#39;)[you have a great eye for treasures!](else-if: $gig is &#39;admin&#39;)[that sounds exhausting!](else-if: $gig is &#39;poet&#39;)[maybe you will find some inspo in Paris!](else-if: $gig is &#39;copywriter&#39;)[you have a way with words!](else-if: $gig is &#39;palm reader&#39;)[you&#39;ll have to tell me my fortune!](else-if: $gig is &#39;barista&#39;)[you really deserve a break!](else-if: $gig is &#39;dj&#39;)[you&#39;re going to be famous!]
+
+Well, combined with the money we saved on baggage fees you have $(print:$purse) to start off. Of course we&#39;ll have to calculate the conversion for that into Euros. (click: &quot;Euros&quot;)[
+
+Ha ha ha! Just kidding!
+
+Okay, (link-goto: &quot;let&#39;s board that plane.&quot;, &quot;level 2&quot;)
+]</tw-passagedata><tw-passagedata pid="17" name="level 3" tags="" position="500,1075" size="100,100">(link-goto: &quot;level 3:
+meet me in paris&quot;, &quot;ella&quot;)</tw-passagedata><tw-passagedata pid="18" name="ella" tags="" position="625,1075" size="100,100">Your friend Ella moved to Paris for real two years ago. She told you she&#39;d meet you as soon as you arrived.
+
+She suggested you meet for drinks at her local cafe. What do you respond?
+
+Sounds great!
+
+What about the brasserie?
+
+I&#39;d love to check out the rooftop of the Pompidou
+
+Let&#39;s walk along the Canal St-Martin</tw-passagedata><tw-passagedata pid="19" name="stacks" tags="" position="975,700" size="100,100">***if you&#39;re looking at this on the phone though, it should be structured like the phone app
+
+&lt;table width=&quot;90%&quot;&gt;&lt;tr&gt;&lt;td&gt;▢ &#39;&#39;Life Unhitched&#39;&#39;
+&lt;/td&gt;
+&lt;td&gt;
+&#39;&#39;Newsletter Title&#39;&#39; - you&#39;d like that, wouldn&#39;t...
+&lt;/td&gt;
+&lt;td&gt;
+&#39;&#39;Sep 4&#39;&#39;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+▢ &#39;&#39;imitation diamonds&#39;&#39;
+&lt;/td&gt;
+&lt;td&gt;
+&#39;&#39;In Defense of De-Optimization&#39;&#39; - make it all simpler...
+&lt;/td&gt;
+&lt;td&gt;
+&#39;&#39;Sep 1&#39;&#39;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+▢ &#39;&#39;pearls and daggers&#39;&#39;
+&lt;/td&gt;
+&lt;td&gt;
+&#39;&#39;Secrets of Paris vintage shoppers&#39;&#39; - You need these
+&lt;/td&gt;
+&lt;td&gt;
+&#39;&#39;Aug 27&#39;&#39;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</tw-passagedata><tw-passagedata pid="20" name="bottom" tags="" position="750,575" size="100,100">Pick something to wear with your t-shirt.
+
+(link-reveal-goto: &#39;&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/jeans.png&quot; class=&quot;snug&quot;&gt;&#39;, &quot;shoes&quot;)[(set:$bottom to &quot;jeans&quot;)(set:$personality to it + 5)] (link-reveal-goto: &#39;&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/pink-skirt.png&quot; class=&quot;snug&quot;&gt;&#39;, &quot;shoes&quot;)[(set:$bottom to &quot;pink&quot;)(set:$personality to it + 2)] (link-reveal-goto: &#39;&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/plaid-skirt.png&quot; class=&quot;snug&quot;&gt;&#39;, &quot;shoes&quot;)[(set:$bottom to &quot;plaid&quot;)(set:$personality to it + 1)] (link-reveal-goto: &#39;&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/sequin-skirt.jpg&quot; class=&quot;snug&quot;&gt;&#39;, &quot;shoes&quot;)[(set:$bottom to &quot;sequins&quot;)(set:$mermaid to &quot;true&quot;)]</tw-passagedata><tw-passagedata pid="21" name="shoes" tags="" position="875,575" size="100,100">Choose a pair of shoes.
+
+(link-reveal: &#39;&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/boots.jpg&quot; class=&quot;snug&quot;&gt;&#39;)[(set:$shoes to &quot;boots&quot;)(set:$creature to &quot;witch&quot;)(show:?writingprompt)] (link-reveal: &#39;&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/converse.jpg&quot; class=&quot;snug&quot;&gt;&#39;)[(set:$shoes to &quot;converse&quot;)(set:$creature to &quot;goblin&quot;)(show:?writingprompt)] (link-reveal: &#39;&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/glitter-heels.jpg&quot; class=&quot;snug&quot;&gt;&#39;)[(set:$shoes to &quot;glitter&quot;)(set:$creature to &quot;fairy princess&quot;)(show:?writingprompt)] (link-reveal: &#39;&lt;img src=&quot;https://marykellyreed.com/whisperland/iiimages/rose-heels.png&quot; class=&quot;snug&quot;&gt;&#39;)[(set:$shoes to &quot;rose&quot;)(set:$creature to &quot;vampire&quot;)(show:?writingprompt)]
+
+|writingprompt)[Real quick: how do the shoes you chose make you feel?
+
+&lt;i&gt;These shoes make me feel like&lt;/i&gt; (input: bind $myshoes)
+
+(button:&quot;=X=&quot;)[continue
+
+(click-rerun: &quot;continue&quot;)[
+(if: $myshoes is not &quot;&quot;)[(goto:&#39;results&#39;)](else: )[&lt;i&gt;please answer the question&lt;/i&gt;]
+]]
+]</tw-passagedata><tw-passagedata pid="22" name="CREDITS" tags="" position="700,200" size="100,100">Images came from:
+
+https://pixabay.com/
+https://www.pexels.com/
+https://www.ebay.com/</tw-passagedata><tw-passagedata pid="23" name="a perfect afternoon in paris" tags="" position="1200,825" size="100,100">Arrive at Charles de Galle.
+
+Take the train in. (It doesn&#39;t matter if you purchase your train ticket in English or French)
+
+It&#39;s early; your [apartment] isn&#39;t ready yet.
+
+Get off at __ cause it sounds familiar.
+
+Take the __ to Canal St. Martin.
+
+Wander the streets slowly with your carry-on dragging behind you. Trust your intution on these winding streets.
+
+Go in to the first boulangerie you see, even if you&#39;re not sure if it&#39;s the one you went to last time (so long ago) (who could remember one boulangerie amongst dozens, hundreds?)
+
+Pain au chocolat.
+
+Keep walking.
+
+Find the canal.
+
+Keep walking.
+
+No need to consult the map. Here is a park.
+
+Sit in the grass.
+
+Stretch your legs, wiggle your toes in the grass, eat your pastry.
+
+If you please:
+
+walk back.
+
+Wander into some of those shops along the canal.
+
+You might find a treasure. If you don&#39;t, the sunshine is treasure enough, n&#39;est pas?
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
