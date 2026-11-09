@@ -9,7 +9,7 @@ function SelectRedirect() {
       break;
   
       case "whisperland":
-      window.location = "whisperland.html";
+      window.location = "whisperlandi.html";
       break;
   
       case "kite":
